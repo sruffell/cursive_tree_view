@@ -52,6 +52,8 @@ fn main() {
     });
 
     tree.set_on_select(|siv: &mut Cursive, row| {
+        let mut tv = siv.find_name::<TextView>("status").unwrap();
+        tv.set_content("CHANGED!");
         set_status(siv, row, "Selected");
     });
 
